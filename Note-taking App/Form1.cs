@@ -40,6 +40,7 @@ namespace Note_taking_App
 
         private void bttSave_Click(object sender, EventArgs e)
         {
+            //add new node
             table.Rows.Add(txtTitle.Text, txtMessage.Text);
 
             txtTitle.Clear();
@@ -54,6 +55,7 @@ namespace Note_taking_App
 
                 if (index > -1)
                 {
+                    //look up right index
                     txtTitle.Text = table.Rows[index].ItemArray[0].ToString();
                     txtMessage.Text = table.Rows[index].ItemArray[1].ToString();
                 }
@@ -67,6 +69,7 @@ namespace Note_taking_App
         {
             try
             {
+                //remove node
                 int index = dataGridView1.CurrentCell.RowIndex;
                 table.Rows[index].Delete();
             }
